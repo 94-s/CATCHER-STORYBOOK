@@ -18,7 +18,7 @@ export interface ButtonProps {
   /**
    * Button Valid는 사용하지 않을시 "true" 표기
    */
-  Valid?: string;
+  Valid: string;
   /**
    * Button outLine Valid는 사용하지 않을시 "true" 표기
    */

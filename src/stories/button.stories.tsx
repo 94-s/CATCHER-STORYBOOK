@@ -5,6 +5,7 @@ import { Meta, Story } from '@storybook/react';
 export default {
   title: 'Components/Button',
   component: Button,
+  parameters: { actions: { argTypesRegex: '^on.*' } },
 } as Meta;
 
 const Template: Story<ButtonProps> = (args) => <Button {...args} />;
