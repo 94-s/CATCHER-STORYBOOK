@@ -4,6 +4,10 @@ import Colors from '../themes/color';
 
 export interface ButtonProps {
   /**
+   * Button type  default value => "button" type
+   */
+  type?: 'button' | 'submit';
+  /**
    * Button label button 속 text
    */
   label: string;
