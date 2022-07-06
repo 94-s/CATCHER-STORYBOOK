@@ -14,4 +14,11 @@ export const Basic = Template.bind({});
 
 Basic.args = {
   label: 'Button',
+  type: 'button',
+};
+
+export const outLine = Template.bind({});
+outLine.args = {
+  label: 'Button',
+  outLine: true,
 };
