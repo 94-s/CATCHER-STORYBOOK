@@ -2,34 +2,35 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import Colors from '../themes/color';
 
-export interface CheckboxProps {
+export interface RadioboxProps {
   /**
-   * Checkbox label
+   * radio label
    */
   value?: string;
   /**
-   * Checkbox width 미입력시 default width 사용
+   * radio width 미입력시 default width 사용
    */
   width?: number;
   /**
-   * Checkbox height 미입력시 default height 사용
+   * radio height 미입력시 default height 사용
    */
   height?: number;
   /**
-   * Checkbox value disabled 사용시 Valid 기입
+   * radio value disabled 사용시 Valid 기입
    */
   Valid?: boolean;
+
   /**
-   * Checkbox onChange envent
+   * radio onChange envent
    */
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Checkbox = ({ ...props }: CheckboxProps) => {
+const Radiobox = ({ ...props }: RadioboxProps) => {
   return (
     <Label htmlFor={props.value}>
       <Input
-        type='checkbox'
+        type='radio'
         style={{
           width: props.width ? props.width : '1.5rem',
           height: props.height ? props.height : '1.5rem',
@@ -47,34 +48,33 @@ const Checkbox = ({ ...props }: CheckboxProps) => {
   );
 };
 
-export default Checkbox;
+export default Radiobox;
 
-const sizeStyles = css<CheckboxProps>`
+const sizeStyles = css<RadioboxProps>`
   ${(props) =>
     props.Valid
       ? css`
           &:checked {
-            background-color: ${Colors.Primary400};
+            border: 5px solid ${Colors.mainColor};
           }
         `
       : css`
           &:checked {
-            background-color: ${Colors.Gray500};
+            border: 5px solid ${Colors.Gray500};
           }
         `}
 `;
 
 const Input = styled.input`
-  appearance: ${(props) => props.type}none;
+  appearance: none;
   width: 1.5rem;
   height: 1.5rem;
   border: 1.5px solid gainsboro;
-  border-radius: 0.35rem;
+  border-radius: 100%;
   margin: 0;
   ${sizeStyles}
   &:checked {
-    border-color: transparent;
-    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e");
+    /* border-color: transparent; */
     background-size: 100% 100%;
     background-position: 50%;
     background-repeat: no-repeat;
@@ -88,7 +88,7 @@ const Label = styled.label`
   user-select: none;
 `;
 
-const P = styled.p<CheckboxProps>`
+const P = styled.p<RadioboxProps>`
   margin: 0;
   margin-left: 0.25rem;
 `;
