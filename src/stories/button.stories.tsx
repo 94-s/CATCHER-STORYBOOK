@@ -1,6 +1,7 @@
 import React from 'react';
 import Button, { ButtonProps } from './Button';
 import { Meta, Story } from '@storybook/react';
+import { type } from 'os';
 
 export default {
   title: 'Components/Button',
@@ -10,15 +11,43 @@ export default {
 
 const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
-export const Basic = Template.bind({});
+export const BasicButton = Template.bind({});
 
-Basic.args = {
+BasicButton.args = {
   label: 'Button',
   type: 'button',
+  disabled: false,
+};
+
+export const BasicButtonDisabled = Template.bind({});
+
+BasicButtonDisabled.args = {
+  label: 'Button',
+  type: 'button',
+  disabled: true,
 };
 
 export const outLine = Template.bind({});
+
 outLine.args = {
   label: 'Button',
   outLine: true,
+  disabled: false,
+};
+
+export const outLineDisabled = Template.bind({});
+
+outLineDisabled.args = {
+  label: 'Button',
+  outLine: true,
+  disabled: true,
+};
+
+export const fullWidthButton = Template.bind({});
+
+fullWidthButton.args = {
+  label: 'Button',
+  type: 'button',
+  disabled: false,
+  fullWidth: true,
 };

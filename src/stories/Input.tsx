@@ -37,8 +37,8 @@ const Input = ({ ...props }: Inputprops) => {
   return (
     <Div
       style={{
-        width: props.width ? props.width : 'auto',
-        height: props.height ? props.height : '64px',
+        width: props.width ? props.width : '10rem',
+        height: props.height ? props.height : '2.5rem',
       }}
     >
       <InputBox>

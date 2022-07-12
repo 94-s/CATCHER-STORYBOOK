@@ -16,13 +16,9 @@ export interface ButtonProps {
    */
   color?: string;
   /**
-   * Button disable는 valid가 통과하지 않을시 false
+   * Button disabled 가 true 일시 버튼 활성화
    */
   disabled?: boolean;
-  /**
-   * Button Valid는 사용하지 않을시 "true" 표기
-   */
-  Valid: string;
   /**
    * Button outLine Valid는 사용하지 않을시 "true" 표기
    */
@@ -39,7 +35,7 @@ export interface ButtonProps {
 
 const Button = ({ ...props }: ButtonProps) => {
   return (
-    <ButtonModel disabled={!props.Valid} {...props}>
+    <ButtonModel disabled={props.disabled ? false : true} {...props}>
       {props.label}
     </ButtonModel>
   );
@@ -54,41 +50,31 @@ const sizeStyles = css<ButtonProps>`
       color: ${props.color};
     `}
   ${(props) =>
-    props.outLine! &&
-    css`
-      background: ${Colors.Primary400};
-    `}
-  ${(props) =>
-    props.Valid
+    props.disabled
       ? css`
+          background: ${Colors.Gray300};
+        `
+      : css`
           opacity: 1;
           &:hover {
             background: ${Colors.Primary400};
           }
-        `
-      : css`
-          background: ${Colors.Gray300};
         `}
         ${(props) =>
     props.outLine &&
     css`
-      color: ${Colors.Gray600};
+      color: ${props.disabled ? Colors.Gray400 : Colors.Primary400};
       background-color: ${Colors.white};
-      border: 1px solid ${Colors.Gray400};
-      :hover {
-        color: ${Colors.mainColor};
-        border: 1px solid ${Colors.mainColor};
+      border: 1px solid ${props.disabled ? Colors.Gray400 : Colors.Primary400};
+      &:hover {
+        opacity: 0.7;
+        background-color: ${Colors.white};
       }
     `}
     ${(props) =>
     props.fullWidth &&
     css`
       width: 100%;
-      justify-content: center;
-      & + & {
-        margin-left: 0;
-        margin-top: 1rem;
-      }
     `}
 `;
 
