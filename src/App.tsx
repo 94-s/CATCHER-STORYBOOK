@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
+import Input from './stories/Input';
 
 function App() {
-  return <div></div>;
+  const [value, setValue] = useState('');
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  };
+  const onClick = () => {
+    setValue('');
+  };
+  return (
+    <div>
+      <p>TEST:{value}</p>
+      <Input label='안녕' value={value} onChange={onChange} onClick={onClick} />
+    </div>
+  );
 }
 
 export default App;

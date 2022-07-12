@@ -12,6 +12,10 @@ export interface Inputprops {
    */
   placeholder?: string;
   /**
+   * input value
+   */
+  value?: string;
+  /**
    * input width 입력 안할시 default width 사용
    */
   width?: number;
@@ -28,9 +32,13 @@ export interface Inputprops {
    */
   textVaild?: boolean;
   /**
-   * input onClick envent Handler
+   * input value clear Button envent Handler
    */
   onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
+  /**
+   * input onChange envent
+   */
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Input = ({ ...props }: Inputprops) => {
@@ -43,11 +51,15 @@ const Input = ({ ...props }: Inputprops) => {
     >
       <InputBox>
         {props.label && <Lebel>{props.label}</Lebel>}
-        <InputItem placeholder={props.placeholder} />
+        <InputItem
+          onChange={props.onChange}
+          value={props.value}
+          placeholder={props.placeholder}
+        />
       </InputBox>
-      {props.icon && (
+      {props.value && (
         <IconBox>
-          <IconBtn {...props}>
+          <IconBtn onClick={props.onClick}>
             <P>x</P>
           </IconBtn>
         </IconBox>
@@ -75,16 +87,12 @@ const sizeStyles = css<Inputprops>`
 
 const Div = styled.div<Inputprops>`
   display: flex;
-  /* width: 420px; */
-  height: 64px;
-  padding: 8px 12px;
+  padding: 2px 12px;
   box-sizing: border-box;
   background: ${Colors.white};
   border: 1px solid ${Colors.Gray300};
   border-radius: 5px;
   flex: none;
-  order: 0;
-  flex-grow: 0;
   ${sizeStyles}
 `;
 
@@ -98,7 +106,7 @@ const InputBox = styled.div`
 
 const Lebel = styled.label`
   color: ${Colors.Gray600};
-  font-size: 14px;
+  font-size: 12px;
 `;
 
 const InputItem = styled.input`
@@ -107,7 +115,6 @@ const InputItem = styled.input`
   border: none;
   outline: none;
   font-family: Pretendard;
-  /* font-size: 18px; */
   font-weight: 500;
   line-height: 30px;
   letter-spacing: -0.01em;
@@ -124,8 +131,8 @@ const IconBox = styled.div`
 
 const IconBtn = styled.button`
   cursor: pointer;
-  height: 24px;
-  width: 24px;
+  height: 20px;
+  width: 20px;
   border-radius: 15px;
   background-color: ${Colors.Gray400};
   border: none;

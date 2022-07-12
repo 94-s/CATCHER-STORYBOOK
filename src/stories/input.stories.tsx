@@ -12,12 +12,14 @@ const Template: Story<Inputprops> = (args) => <Input {...args} />;
 
 export const BasicInput = Template.bind({});
 
-BasicInput.args = {};
-
-export const PlaceholderInput = Template.bind({});
-
-PlaceholderInput.args = {
+BasicInput.args = {
   placeholder: 'placeholder',
+};
+
+export const ClearButtonShowInput = Template.bind({});
+
+ClearButtonShowInput.args = {
+  value: 'placeholder',
 };
 
 export const LabelInput = Template.bind({});
@@ -27,10 +29,9 @@ LabelInput.args = {
   placeholder: 'placeholder',
 };
 
-export const allInput = Template.bind({});
+export const LabelClearButtonShowInput = Template.bind({});
 
-allInput.args = {
+LabelClearButtonShowInput.args = {
   label: 'label',
-  placeholder: 'placeholder',
-  icon: true,
+  value: 'placeholder',
 };
