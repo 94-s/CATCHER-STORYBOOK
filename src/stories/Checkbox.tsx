@@ -65,7 +65,7 @@ const sizeStyles = css<CheckboxProps>`
 `;
 
 const Input = styled.input`
-  appearance: ${(props) => props.type}none;
+  appearance: none;
   width: 1.5rem;
   height: 1.5rem;
   border: 1.5px solid gainsboro;
