@@ -17,7 +17,7 @@ export interface LabelProps {
    */
   height?: number;
   /**
-   * label size
+   * label size  "S" | "L" 대문자
    */
   size: string;
   /**

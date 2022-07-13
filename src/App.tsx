@@ -1,27 +1,20 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import './App.css';
 import Checkbox from './stories/Checkbox';
 import Input from './stories/Input';
 import Radiobox from './stories/Radiobox';
+import Toggle from './stories/Toggle';
+import Colors from './themes/color';
 
 function App() {
-  const [value, setValue] = useState('');
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // setValue(e.target.value);
-    setX(e.target.value);
-  };
+  const [value, setValue] = useState(false);
+
   const onClick = () => {
-    setValue('');
+    setValue(!value);
   };
-  const [x, setX] = useState('1');
-  const [s, setS] = useState('2');
-  return (
-    <div>
-      <p>TEST:{value}</p>
-      <Input label='안녕' value={value} onChange={onChange} onClick={onClick} />
-      <Radiobox />
-    </div>
-  );
+
+  return <Toggle state={value} onClick={onClick} disabled />;
 }
 
 export default App;
