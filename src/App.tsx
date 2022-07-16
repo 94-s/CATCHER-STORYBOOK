@@ -18,7 +18,7 @@ function App() {
   return (
     <>
       <div>
-        <div style={{ width: "400px", margin: "0 auto", padding: "50px" }}>
+        <div style={{ width: "40vw", margin: "0 auto", padding: "50px" }}>
           <div style={{ marginBottom: "10px" }}>
             <CommonInput
               label="이메일을 입력해주세요."

@@ -52,7 +52,11 @@ const CommonInput = React.forwardRef<HTMLInputElement, InputProps>(
           <div className={`inputInner ${focus ? "focus" : ""}`}>
             {props.label ? (
               <label
-                className={focus || props.value.length > 0 ? "focus" : ""}
+                className={
+                  focus || (props.value && props.value.length > 0)
+                    ? "focus"
+                    : ""
+                }
                 onClick={onClickLabelAction}
               >
                 {props.label}
@@ -70,7 +74,7 @@ const CommonInput = React.forwardRef<HTMLInputElement, InputProps>(
               ></InputModel>
             </div>
             <div className="util">
-              {props.value.length > 0 ? (
+              {props.value && props.value.length > 0 ? (
                 <button
                   type="button"
                   className="delete"
@@ -167,6 +171,7 @@ const InputModel = styled.input<InputProps>`
   transition: 0.21s;
   color: ${Colors.black};
   //input이 모바일에서 16px 보다 작을때, 접근성을위해 zoom in이 되는데 그걸 해결하기 위한 스타일
-  width: 108%;
-  transform: scale(0.875) translateX(-14px);
+  width: 114%;
+  transform: scale(0.875);
+  transform-origin: left;
 `;
