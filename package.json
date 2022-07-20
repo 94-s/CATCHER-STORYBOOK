@@ -1,8 +1,13 @@
 {
-  "name": "side-project-storybook",
-  "version": "0.1.0",
-  "private": true,
+  "name": "react-uikit-catcher",
+  "version": "0.1.1",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "license": "MIT",
+  "types": "dist/types/index.d.ts",
   "dependencies": {
+    "@react-hook/merged-ref": "^1.3.2",
+    "@rollup/plugin-typescript": "^8.3.3",
     "@storybook/addon-ondevice-knobs": "^5.3.25",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
@@ -16,17 +21,20 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-scripts": "5.0.1",
+    "react-spring": "^9.5.0",
+    "rollup-plugin-dts": "^4.2.2",
     "styled-components": "^5.3.5",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "build": "rollup -c",
+    "build:types": "tsc --emitDeclarationOnly"
   },
   "eslintConfig": {
     "extends": [
@@ -57,6 +65,11 @@
     ]
   },
   "devDependencies": {
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-image": "^2.1.1",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-url": "^7.0.0",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-interactions": "^6.5.9",
@@ -68,8 +81,28 @@
     "@storybook/preset-create-react-app": "^4.1.2",
     "@storybook/react": "^6.5.9",
     "@storybook/testing-library": "^0.0.13",
+    "@svgr/rollup": "^6.3.0",
     "babel-plugin-named-exports-order": "^0.0.2",
     "prop-types": "^15.8.1",
+    "rollup": "^2.77.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-sourcemaps": "^0.6.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.32.1",
+    "rollup-plugin-url": "^3.0.1",
     "webpack": "^5.73.0"
-  }
+  },
+  "peerDependencies": {
+    "@react-hook/merged-ref": "^1.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-spring": "^9.5.0",
+    "styled-components": "^5.3.5"
+  },
+  "files": [
+    "/dist"
+  ]
 }
