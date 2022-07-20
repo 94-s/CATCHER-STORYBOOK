@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import Colors from '../themes/color';
+import Colors from '../../themes/color';
 import { BiPurchaseTagAlt } from 'react-icons/bi';
 
 export interface LabelProps {
