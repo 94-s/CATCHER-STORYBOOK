@@ -2,8 +2,10 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   // Reset CSS
+  html{
+    font-size: 62.5%;
+  }
   * {
-    font-size: 14px;
     -webkit-tap-highlight-color: transparent;
   }
   
@@ -94,7 +96,7 @@ export const GlobalStyle = createGlobalStyle`
     border: 0;
     box-sizing: border-box;
     color: #000;
-    line-height: 1.2;
+    /* line-height: 1.2; */
     letter-spacing: -0.36px;
     /* // font-family: 'pretendard-regular';
     font-family: 'Pretendard'; */
@@ -186,9 +188,19 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-appearance: none;
     font-family: 'Pretendard';
   }
+
+  button{
+    cursor: pointer;
+  }
   
   button:focus {
     outline: 0;
+  }
+
+  .ellipsis{
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
   }
 `;
 
