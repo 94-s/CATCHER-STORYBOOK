@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import Colors from "../../../themes/color";
 import inputModify from "../../assets/inputModify.svg";
 import searchIcon from "../../assets/searchIcon.svg";
 export interface InputProps {
@@ -15,12 +16,13 @@ export interface InputProps {
 const InputStyle = styled.div`
   display: flex;
   align-items: center;
-  background: #fff;
+  background-color: ${Colors.Gray300};
   border: 1px solid #efefef;
   padding: 1.2rem;
   border-radius: 8px;
   transition: 0.21s;
   &.focus {
+    background-color: #fff;
     border: 1px solid #2b2b2b;
   }
   &.disabled {
@@ -50,6 +52,7 @@ const InputStyle = styled.div`
       transform-origin: left;
       transition: 0.21s;
       color: #1c1c1c;
+      background-color: inherit;
       &::placeholder {
         color: #ababab;
       }
