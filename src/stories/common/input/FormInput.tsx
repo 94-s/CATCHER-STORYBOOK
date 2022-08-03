@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
-import styled, { css, keyframes } from "styled-components";
-import Colors from "../../themes/color";
-import IconDelete from "../assets/inputDelete.svg";
-import IconVisible from "../assets/visible.svg";
+import styled from "styled-components";
+import Colors from "../../../themes/color";
+import IconDelete from "../../assets/inputDelete.svg";
+import IconVisible from "../../assets/visible.svg";
 export interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
   /**
    * input box label
@@ -25,7 +25,7 @@ export interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
   onDelete: () => void;
 }
 
-const CommonInput = React.forwardRef<HTMLInputElement, InputProps>(
+const FormInput = React.forwardRef<HTMLInputElement, InputProps>(
   (props, ref) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const [focus, setFocus] = useState(false);
@@ -97,7 +97,7 @@ const CommonInput = React.forwardRef<HTMLInputElement, InputProps>(
   }
 );
 
-export default CommonInput;
+export default FormInput;
 
 const InputBox = styled.div`
   .inputInner {
@@ -110,7 +110,7 @@ const InputBox = styled.div`
     transition: border-color 0.21s;
 
     &.focus {
-      border-color: ${Colors.mainColor};
+      border-color: ${Colors.black};
     }
     label {
       position: absolute;
@@ -124,10 +124,12 @@ const InputBox = styled.div`
       cursor: pointer;
       z-index: 1;
       &.focus {
-        top: -0px;
-        font-size: 11px;
+        top: -2px;
+        left: 6px;
+        font-size: 14px;
         font-weight: 500;
-        color: ${Colors.black};
+        /* color: ${Colors.black}; */
+        padding: 0 5px;
       }
     }
     .scaleBox {
@@ -159,14 +161,15 @@ const InputBox = styled.div`
   }
 
   p {
-    font-size: 12px;
+    font-size: 13px;
     color: ${Colors.mainColor};
     margin-top: 4px;
   }
 `;
 
 const InputModel = styled.input<InputProps>`
-  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
   font-weight: 500;
   transition: 0.21s;
   color: ${Colors.black};
