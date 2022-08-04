@@ -8,6 +8,8 @@ declare const theme: {
         Gray400: string;
         Gray500: string;
         Gray600: string;
+        Gray700: string;
+        Gray800: string;
     };
 };
 export default theme;
