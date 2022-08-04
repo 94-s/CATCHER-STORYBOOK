@@ -1,17 +1,8 @@
-import React from "react";
-import "./App.css";
-import Container from "./stories/layout/container/Container";
-import Footer from "./stories/layout/footer/Footer";
-import Header from "./stories/layout/header/Header";
+import React from 'react';
+import './App.css';
 
 function App() {
-  return (
-    <>
-      <Header />
-      <Container />
-      <Footer />
-    </>
-  );
+  return <></>;
 }
 
 export default App;
