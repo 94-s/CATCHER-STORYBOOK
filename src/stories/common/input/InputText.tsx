@@ -42,8 +42,6 @@ const InputStyle = styled.div`
   }
   .inputWrapper {
     flex: 1;
-    /* width: calc(100% - 36px);
-    overflow: hidden; */
     input {
       width: 114%;
       font-size: 1.6rem;
