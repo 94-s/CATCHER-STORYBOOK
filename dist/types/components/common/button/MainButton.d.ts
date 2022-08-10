@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
     /**
      * Button label button 속 text
@@ -7,7 +7,7 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
     /**
      * Button 기능별 type
      */
-    buttonType: "main" | "sub" | "disabled" | "cancel";
+    buttonType: 'main' | 'sub' | 'disabled' | 'cancel';
 }
-export declare const MainButton: React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLButtonElement>>;
+declare const MainButton: React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLButtonElement>>;
 export default MainButton;

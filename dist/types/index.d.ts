@@ -1,4 +1,4 @@
-export { default as Button } from './components/common/button/MainButton';
+export { default as MainButton } from './components/common/button/MainButton';
 export { default as Checkbox } from './components/common/checkbox/Checkbox';
 export { default as Icon } from './components/Icon/Icon';
 export { default as FormInput } from './components/common/input/FormInput';
@@ -15,3 +15,4 @@ export { default as CatherItem } from './components/components/item/CatherItem';
 export { default as Container } from './components/layout/container/Container';
 export { default as Footer } from './components/layout/footer/Footer';
 export { default as Header } from './components/layout/header/Header';
+export { default as GlobalStyles } from './components/globalStyle';
