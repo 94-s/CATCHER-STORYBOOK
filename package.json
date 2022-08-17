@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-catcher",
-  "version": "0.2.1",
+  "version": "0.2.3",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "license": "MIT",
