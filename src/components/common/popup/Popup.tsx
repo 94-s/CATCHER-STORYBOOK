@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import styled from 'styled-components';
-import popupClose from '../../Icon/vectors/popupClose.svg';
+import { useEffect, useState } from "react";
+import styled from "styled-components";
+import popupClose from "../../Icon/vectors/popupClose.svg";
 
 export interface PopupProps {
   children: React.ReactNode;
   onClickClose: () => void;
   isOpen: boolean;
-  size: 'large' | 'medium' | 'small';
-  type: 'center' | 'bottom';
+  size: "large" | "medium" | "small";
+  type: "center" | "bottom";
 }
 
 const PopupStyle = styled.div`
@@ -77,6 +77,27 @@ const PopupStyle = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
+  &.off {
+    .dim {
+      animation: dimFadeOut 0.1s 0.21s both linear;
+    }
+    .popupContainer {
+      animation: containerFadeOut 0.21s both ease-in-out;
+    }
+  }
+  &.bottom {
+    align-items: flex-end;
+    &.off {
+      .popupContainer {
+        animation: bottomOut 0.21s both ease-in-out;
+      }
+    }
+    .popupContainer {
+      width: 100%;
+      border-radius: 16px 16px 0 0;
+      animation: bottomIn 0.21s both ease-in-out;
+    }
+  }
 
   .dim {
     position: absolute;
@@ -87,9 +108,6 @@ const PopupStyle = styled.div`
     background-color: rgba(26, 26, 26, 0.7);
     cursor: pointer;
     animation: dimFadeIn 0.21s both linear;
-    &.off {
-      animation: dimFadeOut 0.1s 0.21s both linear;
-    }
   }
   .popupContainer {
     position: relative;
@@ -99,9 +117,6 @@ const PopupStyle = styled.div`
     border-radius: 8px;
     z-index: 1;
     animation: containerFadeIn 0.21s both ease-in-out;
-    &.off {
-      animation: containerFadeOut 0.21s both ease-in-out;
-    }
     //size
     &.large {
       min-width: 80vw;
@@ -123,41 +138,48 @@ const PopupStyle = styled.div`
       }
     }
   }
-
-  &.bottom {
-    align-items: flex-end;
-    .popupContainer {
-      width: 100%;
-      border-radius: 16px 16px 0 0;
-      animation: bottomIn 0.21s both ease-in-out;
-      &.off {
-        animation: bottomOut 0.21s both ease-in-out;
-      }
-    }
-  }
 `;
 
 const Popup = (props: PopupProps) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [render, setRender] = useState(false);
+  useEffect(() => {
+    if (props.isOpen) {
+      setTimeout(() => {
+        setRender(true);
+      }, 210);
+    } else {
+      setTimeout(() => {
+        setRender(false);
+      }, 210);
+    }
+  }, [props.isOpen]);
   return (
     <>
-      <PopupStyle className={props.type === 'bottom' ? 'bottom' : 'center'}>
-        <div className={`dim ${props.isOpen ? '' : 'off'}`} />
-        <div
-          className={
-            props.type === 'center'
-              ? `popupContainer ${props.isOpen ? '' : 'off'} ${props.size}`
-              : `popupContainer  ${props.isOpen ? '' : 'off'}`
-          }
+      {render ? (
+        <PopupStyle
+          className={`${props.type === "bottom" ? "bottom" : "center"} ${
+            props.isOpen ? "" : "off"
+          }`}
         >
-          <header>
-            <button type='button' className='close'>
-              <img src={popupClose} alt='팝업 닫기' />
-            </button>
-          </header>
-          <div className='popupContents'>{props.children}</div>
-        </div>
-      </PopupStyle>
+          <div className={`dim`} onClick={() => props.onClickClose()} />
+          <div
+            className={`popupContainer
+            ${props.type === "center" ? `${props.size}` : ""}
+          `}
+          >
+            <header>
+              <button
+                type="button"
+                className="close"
+                onClick={() => props.onClickClose()}
+              >
+                <img src={popupClose} alt="팝업 닫기" />
+              </button>
+            </header>
+            <div className="popupContents">{props.children}</div>
+          </div>
+        </PopupStyle>
+      ) : null}
     </>
   );
 };
