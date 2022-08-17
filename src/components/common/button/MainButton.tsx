@@ -1,6 +1,6 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
-import Colors from '../../../themes/color';
+import React from "react";
+import styled, { css } from "styled-components";
+import Colors from "../../../themes/color";
 
 export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   /**
@@ -10,45 +10,45 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   /**
    * Button 기능별 type
    */
-  buttonType: 'main' | 'sub' | 'disabled' | 'cancel';
+  buttonType: "main" | "sub" | "disabled" | "cancel";
 }
 
-const MainButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  (p, ref) => (
+const MainButton = (props: ButtonProps) => {
+  return (
     <>
-      <ButtonModel ref={ref} {...p} className={p.buttonType}>
-        <>{p.label}</>
+      <ButtonModel {...props} className={props.buttonType}>
+        <>{props.label}</>
       </ButtonModel>
     </>
-  )
-);
+  );
+};
 
 export default MainButton;
 
 const sizeStyles = css<ButtonProps>`
   ${(props) =>
-    props.buttonType === 'main' &&
+    props.buttonType === "main" &&
     css`
       color: ${Colors.white};
       background-color: ${Colors.Primary400};
       border: 1px solid ${Colors.Primary400};
     `}
   ${(props) =>
-    props.buttonType === 'sub' &&
+    props.buttonType === "sub" &&
     css`
       color: ${Colors.Primary400};
       background-color: ${Colors.white};
       border: 1px solid ${Colors.Primary400};
     `}
     ${(props) =>
-    props.buttonType === 'disabled' &&
+    props.buttonType === "disabled" &&
     css`
       color: ${Colors.white};
       background-color: ${Colors.Gray400};
       border: 1px solid ${Colors.Gray400};
     `}
     ${(props) =>
-    props.buttonType === 'cancel' &&
+    props.buttonType === "cancel" &&
     css`
       color: ${Colors.Gray600};
       background-color: ${Colors.white};

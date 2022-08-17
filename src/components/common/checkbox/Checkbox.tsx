@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import Colors from '../../../themes/color';
-import IconChecked from '../../Icon/vectors/checked.svg';
+import React from "react";
+import styled from "styled-components";
+import Colors from "../../../themes/color";
+import IconChecked from "../../Icon/vectors/checked.svg";
 
 export interface CheckboxProps extends React.HTMLAttributes<HTMLInputElement> {
   label?: string;
@@ -9,29 +9,28 @@ export interface CheckboxProps extends React.HTMLAttributes<HTMLInputElement> {
   checked?: boolean;
 }
 
-export const CheckBox = React.forwardRef<HTMLInputElement, CheckboxProps>(
-  (p, ref) => (
+export const CheckBox = (props: CheckboxProps) => {
+  return (
     <>
       <CheckboxModel>
         <input
-          ref={ref}
-          type='checkbox'
-          {...p}
-          disabled={p.disabled}
-          checked={p.checked}
+          type="checkbox"
+          {...props}
+          disabled={props.disabled}
+          checked={props.checked}
         />
-        <label htmlFor={p.id}>
-          <i /> <span>{p.label}</span>
+        <label htmlFor={props.id}>
+          <i /> <span>{props.label}</span>
         </label>
       </CheckboxModel>
     </>
-  )
-);
+  );
+};
 
 export default CheckBox;
 
 const CheckboxModel = styled.div<CheckboxProps>`
-  input[type='checkbox'] {
+  input[type="checkbox"] {
   }
   label {
     display: flex;
@@ -60,7 +59,7 @@ const CheckboxModel = styled.div<CheckboxProps>`
       transition: 0.21s;
     }
   }
-  input[type='checkbox']:checked + label {
+  input[type="checkbox"]:checked + label {
     i {
       border: 1px solid ${Colors.mainColor};
       background-color: ${Colors.mainColor};
@@ -68,7 +67,7 @@ const CheckboxModel = styled.div<CheckboxProps>`
     }
   }
 
-  input[type='checkbox']:disabled + label {
+  input[type="checkbox"]:disabled + label {
     cursor: not-allowed;
     i {
       border: 1px solid ${Colors.Gray500};
