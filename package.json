@@ -1,6 +1,6 @@
 {
   "name": "react-uikit-catcher",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "license": "MIT",
@@ -28,13 +28,9 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "build": "rollup -c",
-    "build:types": "tsc --emitDeclarationOnly"
+    "build": "rollup -c && node versionAutoUpdate.bat"
   },
   "eslintConfig": {
     "extends": [
