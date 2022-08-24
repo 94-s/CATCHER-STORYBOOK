@@ -1,7 +1,17 @@
-import React from "react";
-import { ThemeProvider } from "styled-components";
-import { Default as theme } from "../src/themes";
-import GlobalStyle from "../src/globalStyle";
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { Default as theme } from '../src/themes';
+import GlobalStyle from '../src/components/style/GlobalStyles';
+
+export const parameters = {
+  actions: { argTypesRegex: '^on[A-Z].*' },
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
+    },
+  },
+};
 
 export const decorators = [
   (Story) => (
@@ -11,13 +21,3 @@ export const decorators = [
     </ThemeProvider>
   ),
 ];
-
-export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/,
-    },
-  },
-};
