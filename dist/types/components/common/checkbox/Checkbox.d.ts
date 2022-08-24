@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 export interface CheckboxProps extends React.HTMLAttributes<HTMLInputElement> {
     label?: string;
     disabled?: boolean;
     checked?: boolean;
 }
-export declare const CheckBox: React.ForwardRefExoticComponent<CheckboxProps & React.RefAttributes<HTMLInputElement>>;
+export declare const CheckBox: (props: CheckboxProps) => JSX.Element;
 export default CheckBox;
