@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Colors from '../../../themes/color';
-import InputText from '../../common/input/InputText';
+import InputText from '../../input/InputText';
 import camera from '../../Icon/vectors/camera.svg';
 import send from '../../Icon/vectors/send.svg';
 const ChatInputStyle = styled.div`

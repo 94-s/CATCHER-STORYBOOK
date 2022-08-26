@@ -1,11 +1,11 @@
 //common
-export { default as MainButton } from './Button/Button';
-export { default as Checkbox } from './Checkbox/Checkbox';
-export { default as FormInput } from './input/FormInput';
-export { default as InputText } from './input/InputText';
-export { default as Popup } from './popup/Popup';
-export { default as Radio } from './Radio/Radio';
-export { default as CommonButton } from './common/CommonButton';
+export * from './Button/Button';
+export * from './Checkbox/Checkbox';
+export * from './input/FormInput';
+export * from './input/InputText';
+export * from './popup/Popup';
+export * from './Radio/Radio';
+export * from './common/CommonButton';
 
 export * from './Checkbox';
 export * from './Select';
@@ -14,8 +14,8 @@ export * from './Icon';
 export * from './Label';
 export * from './Toggle/Toggle';
 //Components
-export { default as ChatInput } from './util/chat/ChatInput';
-export { default as CatherItem } from './util/item/CatherItem';
+// export * from './Util';
+
 //layout
 export * from './layout';
 // globalstyle

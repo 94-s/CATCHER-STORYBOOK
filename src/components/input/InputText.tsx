@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import Colors from '../../../themes/color';
+import Colors from '../../themes/color';
 import inputModify from '../../Icon/vectors/inputModify.svg';
 import searchIcon from '../../Icon/vectors/searchIcon.svg';
 export interface InputProps {
