@@ -2,8 +2,8 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import Colors from '../../../themes/color';
 import headerLogo from '../../Icon/vectors/headerLogo.svg';
-import MainButton from '../../../components/common/button/MainButton';
-import InputText from '../../../components/common/input/InputText';
+import MainButton from '../../Button/Button';
+import InputText from '../../input/InputText';
 const HeaderStyle = styled.header`
   height: 72px;
   /* background-color: teal; */
