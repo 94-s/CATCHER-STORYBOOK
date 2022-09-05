@@ -2,7 +2,6 @@
 import React from 'react';
 import * as icons from './svg';
 import { css } from '@emotion/react';
-import { number, string } from 'prop-types';
 
 export type IconType = keyof typeof icons;
 

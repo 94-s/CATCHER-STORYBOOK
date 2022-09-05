@@ -1,3 +1,4 @@
+/**@jsxImportSource @emotion/react */
 import { Global, css } from '@emotion/react';
 import { Colors } from './themes';
 
