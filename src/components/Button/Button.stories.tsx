@@ -5,6 +5,7 @@ import Button, { ButtonProps } from './Button';
 export default {
   title: 'components/Button',
   component: Button,
+
   parameters: { actions: { argTypesRegex: '^on.*' } },
 } as Meta;
 
