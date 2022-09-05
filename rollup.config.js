@@ -1,16 +1,15 @@
-/* eslint-disable */
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import { terser } from 'rollup-plugin-terser';
-import external from 'rollup-plugin-peer-deps-external';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import scss from 'rollup-plugin-scss';
 import svgr from '@svgr/rollup';
 import url from 'rollup-plugin-url';
 import dts from 'rollup-plugin-dts';
+import packageJson from './package.json';
 
-const packageJson = require('./package.json');
-
-export default [
+const rollupConfig = [
   {
     input: 'src/index.ts',
     output: [
@@ -27,18 +26,23 @@ export default [
       },
     ],
     plugins: [
-      external(),
+      peerDepsExternal(),
       resolve(),
       commonjs(),
-      typescript(),
+      typescript({ tsconfig: './tsconfig.build.json' }),
+      scss({}),
       url(),
-      svgr(),
+      svgr({
+        typescript: true,
+      }),
       terser(),
     ],
+    external: ['react', 'react-dom', 'styled-components'],
   },
   {
-    input: 'src/index.ts',
-    output: [{ file: packageJson.types, format: 'es' }],
+    input: 'dist/types/index.d.ts',
+    output: [{ file: 'dist/index.d.ts', format: 'esm' }],
+    external: [/\.s?css$/, /\.css$/, /\.svg$/],
     plugins: [
       url(),
       svgr({
@@ -48,3 +52,5 @@ export default [
     ],
   },
 ];
+
+export default rollupConfig;

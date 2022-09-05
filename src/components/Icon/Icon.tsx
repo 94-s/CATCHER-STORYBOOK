@@ -1,29 +1,69 @@
-import React, { SVGProps } from 'react';
-import * as vectors from './vectors';
+/**@jsxImportSource @emotion/react */
+import React from 'react';
+import * as icons from './svg';
+import { css } from '@emotion/react';
+import { number, string } from 'prop-types';
 
-type IconName = keyof typeof vectors;
+export type IconType = keyof typeof icons;
 
-export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'css'> {
-  name: IconName;
+export interface IconProps {
+  icon: IconType;
 }
 
-/**
- * 프로젝트에 등록된 벡터 아이콘을 보여줍니다.
- *
- * Svg 요소의 모든 기분 소품을 허용합니다.
- *
- * Icon의  `width` 와 `height` 를 조정할수 있습니다.
- * `className` or `style` 사용하여 size or color 를 변경 가능합니다.
- */
-const Icon = React.forwardRef<SVGSVGElement, IconProps>(
-  ({ name, ...rest }, ref) => {
-    return React.createElement(vectors[name], {
-      ...rest,
-      ref,
-    });
+export interface IconBoxProps {
+  icon: IconType;
+  rotate?: number;
+  width?: string;
+  height?: string;
+  color?: string;
+  className?: string;
+}
+
+const iconBoxStyle = (
+  rotate: number,
+
+  width?: string,
+
+  height?: string,
+
+  color?: string
+) => css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transform: rotate(${rotate}deg);
+  svg {
+    width: ${width};
+    height: ${height};
+
+    g:first-of-type {
+      path,
+      circle {
+        fill: none;
+      }
+    }
+
+    path,
+    circle {
+      fill: ${color};
+    }
   }
-);
+`;
 
-export default Icon;
+const SVGIcon = ({ icon }: IconProps) => React.createElement(icons[icon]);
 
-Icon.displayName = 'Icon';
+export const Icon = ({
+  icon,
+  rotate = 0,
+  width,
+  height,
+  color = 'black',
+  className,
+}: IconBoxProps) => {
+  return (
+    <div css={iconBoxStyle(rotate, width, height, color)} className={className}>
+      <SVGIcon icon={icon} />
+    </div>
+  );
+};
