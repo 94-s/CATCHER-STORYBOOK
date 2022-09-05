@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Colors from '../../themes/color';
-import IconChecked from '../Icon/vectors/checked.svg';
+import IconChecked from '../../Icon/vectors/checked.svg';
 
 export interface CheckboxProps extends React.HTMLAttributes<HTMLInputElement> {
   label?: string;

@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import Colors from '../../themes/color';
-import IconDelete from '../Icon/vectors/inputDelete.svg';
-import IconVisible from '../Icon/vectors/visible.svg';
+import IconDelete from '../../Icon/vectors/inputDelete.svg';
+import IconVisible from '../../Icon/vectors/visible.svg';
 export interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
   /**
    * input box label
