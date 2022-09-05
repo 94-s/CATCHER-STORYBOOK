@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import GlobalStyle from '../src/globalStyle';
 import { Default as theme } from '../src/themes';
-import GlobalStyle from '../src/components/style/GlobalStyles';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

@@ -1,7 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyle = createGlobalStyle`
-  // Reset CSS
+const GlobalStyle = createGlobalStyle`
+
+// Reset CSS
   html{
     font-size: 62.5%;
   }
@@ -170,11 +171,6 @@ export const GlobalStyle = createGlobalStyle`
     left: -999px;
   }
   
-
-  
-
-  
-
   textarea {
     resize: none;
   }
