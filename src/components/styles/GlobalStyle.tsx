@@ -1,14 +1,17 @@
-import { createGlobalStyle } from 'styled-components';
+import { Global, css } from '@emotion/react';
+import { Colors } from './themes';
 
-export const GlobalStyle = createGlobalStyle`
+export default function GlobalStyle() {
+  return <Global styles={style} />;
+}
+const style = css`
   // Reset CSS
-  html{
+  html {
     font-size: 62.5%;
   }
   * {
     -webkit-tap-highlight-color: transparent;
   }
-  
   html,
   body,
   div,
@@ -102,7 +105,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Pretendard'; */
     font-weight: 400;
   }
-  
+
   /* HTML5 display-role reset for older browsers */
   article,
   aside,
@@ -117,48 +120,48 @@ export const GlobalStyle = createGlobalStyle`
   section {
     display: block;
   }
-  
+
   a {
     display: inline-block;
     text-decoration: none;
     color: inherit;
   }
-  
+
   a:link,
   a:visited {
     text-decoration: none;
   }
-  
+
   a:hover,
   a:active {
     text-decoration: none;
   }
-  
+
   img {
     border: none;
     vertical-align: middle;
   }
-  
+
   ol,
   ul,
   li {
     list-style: none;
   }
-  
+
   i,
   em {
     font-style: normal;
   }
-  
+
   table {
     border-collapse: collapse;
     border-spacing: 0;
   }
-  
+
   fieldset {
     border: none;
   }
-  
+
   legend {
     width: 1px;
     height: 1px;
@@ -173,7 +176,7 @@ export const GlobalStyle = createGlobalStyle`
   textarea {
     resize: none;
   }
-  
+
   input,
   select,
   button,
@@ -184,19 +187,17 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Pretendard';
   }
 
-  button{
+  button {
     cursor: pointer;
   }
-  
+
   button:focus {
     outline: 0;
   }
 
-  .ellipsis{
+  .ellipsis {
     white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; 
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 `;
-
-export default GlobalStyle;
