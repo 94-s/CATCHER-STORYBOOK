@@ -1,5 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import GlobalStyle from '../src/globalStyle';
 import { Default as theme } from '../src/themes';
 
 export const parameters = {
@@ -15,6 +16,7 @@ export const parameters = {
 export const decorators = [
   (Story) => (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <Story />
     </ThemeProvider>
   ),
