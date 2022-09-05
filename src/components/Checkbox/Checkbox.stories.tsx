@@ -1,19 +1,11 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
+import { Meta } from "@storybook/react";
 import Checkbox, { CheckboxProps } from "./Checkbox";
 
 export default {
-  title: "common/Checkbox",
+  title: "components/Checkbox",
   component: Checkbox,
   parameters: { actions: { argTypesRegex: "^on.*" } },
 } as Meta;
 
-const Template: Story<CheckboxProps> = (args) => <Checkbox {...args} />;
-
-export const BasicCheckbox = Template.bind({});
-
-BasicCheckbox.args = {
-  label: "checkbox",
-  disabled: false,
-  checked: false,
-};
+export const Base = (args: CheckboxProps) => <Checkbox {...args} />;

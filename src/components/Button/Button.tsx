@@ -1,22 +1,22 @@
-import React from 'react';
-import { ButtonModel } from './Button.style';
+import React from "react";
+import { ButtonModel } from "./Button.style";
 
 export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   /**
    * Button label button 속 text
    */
-  label: string;
+  children: React.ReactNode;
   /**
    * Button 기능별 type
    */
-  buttonType: 'main' | 'sub' | 'disabled' | 'cancel';
+  color: "main" | "sub" | "disabled" | "cancel";
 }
 
 const Button = (props: ButtonProps) => {
   return (
     <>
-      <ButtonModel {...props} className={props.buttonType}>
-        <>{props.label}</>
+      <ButtonModel {...props} className={props.color}>
+        {props.children}
       </ButtonModel>
     </>
   );

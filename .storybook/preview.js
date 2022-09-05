@@ -1,10 +1,10 @@
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import { Default as theme } from '../src/themes';
-import GlobalStyle from '../src/components/style/GlobalStyles';
+import React from "react";
+import { ThemeProvider } from "styled-components";
+import { Default as theme } from "../src/themes";
+import GlobalStyle from "../src/components/Style/GlobalStyles";
 
 export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
+  actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {
       color: /(background|color)$/i,

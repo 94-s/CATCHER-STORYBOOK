@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import styled from 'styled-components';
-import Colors from '../../../themes/color';
-import headerLogo from '../../Icon/vectors/headerLogo.svg';
-import MainButton from '../../Button/Button';
-import InputText from '../../input/InputText';
+import { useState } from "react";
+import styled from "styled-components";
+import Colors from "../../../themes/color";
+import headerLogo from "../../Icon/vectors/headerLogo.svg";
+import Button from "../../Button/Button";
+import InputText from "../../input/InputText";
 const HeaderStyle = styled.header`
   height: 72px;
   /* background-color: teal; */
@@ -59,33 +59,33 @@ const HeaderStyle = styled.header`
 `;
 
 function Header() {
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState("");
   return (
     <>
       <HeaderStyle>
-        <div className='headerInner'>
-          <div className='headerContents'>
-            <div className='left'>
-              <div className='logo'>
-                <a href='/'>
-                  <img src={headerLogo} alt='헤더 로고' />
+        <div className="headerInner">
+          <div className="headerContents">
+            <div className="left">
+              <div className="logo">
+                <a href="/">
+                  <img src={headerLogo} alt="헤더 로고" />
                 </a>
               </div>
-              <div className='menu'>
-                <a href='/'>Shop</a>
-                <a href='/'>Chatting</a>
+              <div className="menu">
+                <a href="/">Shop</a>
+                <a href="/">Chatting</a>
               </div>
             </div>
-            <div className='right'>
-              <div className='searchBox'>
+            <div className="right">
+              <div className="searchBox">
                 <InputText
                   value={searchValue}
                   onChange={(e) => setSearchValue(e.target.value)}
-                  placeholder='찾는 상품이 있으신가요?'
+                  placeholder="찾는 상품이 있으신가요?"
                   search
                 />
               </div>
-              <MainButton buttonType='sub' label='Sign In' />
+              <Button color="sub">Sign In</Button>
             </div>
           </div>
         </div>

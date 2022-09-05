@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/react";
 import Radio, { RadioProps } from "./Radio";
 
 export default {
-  title: "common/Radio",
+  title: "components/Radio",
   component: Radio,
   parameters: { actions: { argTypesRegex: "^on.*" } },
 } as Meta;
