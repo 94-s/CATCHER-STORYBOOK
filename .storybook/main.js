@@ -11,4 +11,9 @@ module.exports = {
   core: {
     builder: '@storybook/builder-webpack5',
   },
+  // webpackFinal: async (config, { configType }) => {
+  //   const oneOfRule = config.module.rules.find((rule) => rule.oneOf);
+
+  //   return config;
+  // },
 };
