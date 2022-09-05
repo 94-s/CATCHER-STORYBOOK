@@ -1,3 +1,7 @@
+const path = require('path');
+
+const toPath = (_path) => path.join(process.cwd(), _path);
+
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
@@ -5,15 +9,29 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@storybook/preset-create-react-app',
-    '@storybook/addon-knobs',
   ],
+  webpackFinal: async (config) => ({
+    ...config,
+    resolve: {
+      ...config.resolve,
+      alias: {
+        ...config.resolve.alias,
+        '@emotion/core': toPath('node_modules/@emotion/react'),
+      },
+    },
+  }),
+
   framework: '@storybook/react',
   core: {
     builder: '@storybook/builder-webpack5',
   },
-  // webpackFinal: async (config, { configType }) => {
-  //   const oneOfRule = config.module.rules.find((rule) => rule.oneOf);
-
-  //   return config;
-  // },
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      compilerOptions: {
+        allowSyntheticDefaultImports: false,
+        esModuleInterop: false,
+      },
+    },
+  },
 };

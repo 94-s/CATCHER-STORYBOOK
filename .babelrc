@@ -1,0 +1,17 @@
+{
+  "presets": [
+    [
+      "@emotion/babel-preset-css-prop",
+      {
+        "runtime": "automatic",
+        "jsxImportSource": "@emotion/react"
+      }
+    ],
+    "@babel/preset-env",
+    "@babel/preset-react",
+    {
+      "flow": false,
+      "typescript": true
+    }
+  ]
+}
