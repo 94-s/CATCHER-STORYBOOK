@@ -8,7 +8,7 @@ export interface ButtonProps {
   children?: React.ReactNode;
   text?: string;
   layout?: 'block' | 'inline-block';
-  onChange?: (e: React.ChangeEvent<HTMLButtonElement>) => void;
+  onChange: (e: React.ChangeEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
 }
 
@@ -31,11 +31,7 @@ const Button = ({
       <button
         css={styles.buttonStyle(mode ? mode : 'primary')}
         type={type ? type : 'button'}
-        onChange={
-          onChange
-            ? (e: React.ChangeEvent<HTMLButtonElement>) => onChange(e)
-            : () => {}
-        }
+        onChange={(e: React.ChangeEvent<HTMLButtonElement>) => onChange(e)}
         disabled={disabled}
       >
         {text && <span>{text}</span>}

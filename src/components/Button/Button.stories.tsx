@@ -12,6 +12,10 @@ const storiesLayoutStyle = css`
   margin: 10px 0px;
 `;
 
+const h3LayoutStyle = css`
+  margin-bottom: 10px;
+`;
+
 export const Base = (args: ButtonProps) => {
   return (
     <>
@@ -23,17 +27,21 @@ export const Base = (args: ButtonProps) => {
 export const Mode = (args: ButtonProps) => {
   return (
     <>
+      <h3 css={h3LayoutStyle}>CTA</h3>
       <div css={storiesLayoutStyle}>
-        <Button text='버튼' mode='cta' />
+        <Button text='버튼' mode='cta' {...args} />
       </div>
+      <h3 css={h3LayoutStyle}>PRIMARY</h3>
       <div css={storiesLayoutStyle}>
-        <Button text='버튼' mode='primary' />
+        <Button text='버튼' mode='primary' {...args} />
       </div>
+      <h3 css={h3LayoutStyle}>LINE</h3>
       <div css={storiesLayoutStyle}>
-        <Button text='버튼' mode='line' />
+        <Button text='버튼' mode='line' {...args} />
       </div>
+      <h3 css={h3LayoutStyle}>GRAY</h3>
       <div css={storiesLayoutStyle}>
-        <Button text='버튼' mode='gray' />
+        <Button text='버튼' mode='gray' {...args} />
       </div>
     </>
   );
