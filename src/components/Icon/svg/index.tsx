@@ -5,6 +5,7 @@ export { ReactComponent as icCamera } from './icCamera.svg';
 export { ReactComponent as icChecked } from './icChecked.svg';
 export { ReactComponent as icFlow } from './icFlow.svg';
 export { ReactComponent as icColors } from './icColors.svg';
+export { ReactComponent as inputDelete } from './inputDelete.svg';
 
 // 이후는 작업자가 적용 한다.
 // TODO: export 설정 정의 => 김진영 적용 예정
