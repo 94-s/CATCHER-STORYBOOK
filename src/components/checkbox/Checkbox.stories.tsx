@@ -11,7 +11,7 @@ export default {
 type CheckboxStory = ComponentStory<typeof Checkbox>;
 
 const Template: CheckboxStory = (args) => {
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState<boolean>(false);
 
   useEffect(() => {
     setChecked(args.checked);
@@ -30,6 +30,7 @@ const Template: CheckboxStory = (args) => {
 };
 
 export const Basic = Template.bind({});
+
 Basic.args = {
   size: 'lg',
   label: '가나다라마바사아',
