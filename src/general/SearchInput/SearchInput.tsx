@@ -4,8 +4,8 @@ import {
   containerStyle,
   searchInputStyle,
   buttonStyle,
-} from './SeachInput.styled';
-import { Icon } from '@components/Icon';
+} from './SeachInput.style';
+import { Icon } from '@src/general/Icon';
 import useChange from '@hooks/useChange';
 import useDisplay from '@hooks/useDisplay';
 

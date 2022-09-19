@@ -1,5 +1,5 @@
-import { css } from "@emotion/react";
-import { Colors } from "../styles/themes";
+import { css } from '@emotion/react';
+import { Colors } from '../styles/themes';
 
 // todo: border 색상
 const containerStyle = () => css`
