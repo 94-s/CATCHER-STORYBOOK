@@ -99,7 +99,7 @@ const style = css`
     padding: 0;
     border: 0;
     box-sizing: border-box;
-    color: #000;
+    /* color: #000; */
     /* line-height: 1.2; */
     letter-spacing: -0.36px;
     /* // font-family: 'pretendard-regular';
