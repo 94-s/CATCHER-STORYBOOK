@@ -1,9 +1,13 @@
 /**@jsxImportSource @emotion/react */
-import React from "react";
-import { containerStyle, searchInputStyle, buttonStyle } from "./styled";
-import { Icon } from "@components/Icon";
-import useChange from "@hooks/useChange";
-import useDisplay from "@hooks/useDisplay";
+import React from 'react';
+import {
+  containerStyle,
+  searchInputStyle,
+  buttonStyle,
+} from './SeachInput.styled';
+import { Icon } from '@components/Icon';
+import useChange from '@hooks/useChange';
+import useDisplay from '@hooks/useDisplay';
 
 export interface SearchInputProps {
   className?: string;
@@ -18,7 +22,7 @@ export const SearchInput = ({
   search,
   autoComplete,
 }: SearchInputProps) => {
-  const [value, , onChange] = useChange("");
+  const [value, , onChange] = useChange('');
   const [display, , openDisplay, closeDisplay] = useDisplay(false);
 
   const handelFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -30,7 +34,7 @@ export const SearchInput = ({
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Escape") {
+    if (e.key === 'Escape') {
       e.preventDefault();
       closeDisplay();
     }
@@ -39,9 +43,9 @@ export const SearchInput = ({
 
   return (
     <div>
-      <form css={containerStyle()} method="GET" onSubmit={handelFormSubmit}>
+      <form css={containerStyle()} method='GET' onSubmit={handelFormSubmit}>
         <input
-          type="search"
+          type='search'
           css={searchInputStyle()}
           className={className}
           value={value}
@@ -51,12 +55,12 @@ export const SearchInput = ({
           onFocus={openDisplay}
           onBlur={closeDisplay}
         />
-        <button type="submit" css={buttonStyle()}>
+        <button type='submit' css={buttonStyle()}>
           <Icon
-            icon="icSearchIcon"
-            width="15px"
-            height="15px"
-            color="transparent"
+            icon='icSearch'
+            width='15px'
+            height='15px'
+            color='transparent'
           />
         </button>
       </form>
