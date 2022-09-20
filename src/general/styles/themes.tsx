@@ -109,8 +109,44 @@ interface ColorsProps {
 // TODO: 세운님 작업 예정 (세운님 위와 같은 형식으로 interface 작성해주시면 되고, 궁금하신거 있으시면 언제든 연락주세요!)
 // Typography
 interface FontsProps {
-  size: {};
-  weight: {};
+  size: {
+    size40:string
+    size35:string
+    size26:string
+    size18:string
+    size16:string
+    size14:string
+    size12:string
+  };
+  weight: {
+    weight100: string
+    weight200: string
+    weight300: string
+    weight400: string
+    weight500: string
+    weight600: string
+    weight700: string
+    weight800: string
+    weight900: string
+  };
+  style: {
+    heading1: string
+    heading2: string
+    title1: string
+    title2: string
+    title3: string
+    subtitle1: string
+    subtitle2: string
+    subtitle3: string
+    body1: string
+    body2: string
+    body3: string
+    body4: string
+    body5: string
+    body6: string
+    detail1: string
+    detail2: string
+  }
 }
 
 const Colors: ColorsProps = {
@@ -221,5 +257,50 @@ const Colors: ColorsProps = {
   },
 };
 
+const Fonts: FontsProps = {
+  // font-size
+  // [size숫자] 보다 small, medium, large, 이런식으로 구분하는게 나을거 같기도 함
+  size: {
+    size40:'font-size: 40px;',
+    size35:'font-size: 52px;',
+    size26:'font-size: 26px;',
+    size18:'font-size: 18px;',
+    size16:'font-size: 16px;',
+    size14:'font-size: 14px;',
+    size12:'font-size: 12px;',
+  },
+  //font-weight
+  weight: {
+    weight100: 'font-weight:100;',
+    weight200: 'font-weight:200;',
+    weight300: 'font-weight:300;',
+    weight400: 'font-weight:400;',
+    weight500: 'font-weight:500;',
+    weight600: 'font-weight:600;',
+    weight700: 'font-weight:700;',
+    weight800: 'font-weight:800;',
+    weight900: 'font-weight:900;',
+  },
+  // typography style
+  style: {
+    heading1: 'font-size:40px; font-weight:800; line-height:54px;',
+    heading2: 'font-size:35px; font-weight:700; line-height:52px;',
+    title1: 'font-size:26px; font-weight:800; line-height:42px;',
+    title2: 'font-size:26px; font-weight:800; line-height:42px;',
+    title3: 'font-size:26px; font-weight:500; line-height:42px;',
+    subtitle1: 'font-size:18px; font-weight:700; line-height:30px;',
+    subtitle2: 'font-size:18px; font-weight:500; line-height:30px;',
+    subtitle3: 'font-size:18px; font-weight:400; line-height:30px;',
+    body1: 'font-size:16px; font-weight:700; line-height:26px;',
+    body2: 'font-size:16px; font-weight:500; line-height:26px;',
+    body3: 'font-size:16px; font-weight:400; line-height:26px;',
+    body4: 'font-size:14px; font-weight:700; line-height:22px;',
+    body5: 'font-size:14px; font-weight:500; line-height:22px;',
+    body6: 'font-size:14px; font-weight:400; line-height:22px;',
+    detail1: 'font-size:12px; font-weight:500; line-height:18px;',
+    detail2: 'font-size:12px; font-weight:400; line-height:18px;',
+  }
+}
+
 // TODO: export에 Fonts 추가
-export { Colors };
+export { Colors,Fonts };
