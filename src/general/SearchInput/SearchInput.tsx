@@ -43,9 +43,9 @@ export const SearchInput = ({
 
   return (
     <div>
-      <form css={containerStyle()} method='GET' onSubmit={handelFormSubmit}>
+      <form css={containerStyle()} method="GET" onSubmit={handelFormSubmit}>
         <input
-          type='search'
+          type="search"
           css={searchInputStyle()}
           className={className}
           value={value}
@@ -55,12 +55,12 @@ export const SearchInput = ({
           onFocus={openDisplay}
           onBlur={closeDisplay}
         />
-        <button type='submit' css={buttonStyle()}>
+        <button type="submit" css={buttonStyle()}>
           <Icon
-            icon='icSearch'
-            width='15px'
-            height='15px'
-            color='transparent'
+            icon="icSearch"
+            width="15px"
+            height="15px"
+            color="transparent"
           />
         </button>
       </form>

@@ -25,7 +25,7 @@ const iconBoxStyle = (
 
   height?: string,
 
-  color?: string
+  color?: string,
 ) => css`
   display: flex;
   justify-content: center;

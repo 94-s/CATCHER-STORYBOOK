@@ -25,7 +25,7 @@ const Button = ({
     <div
       css={styles.buttonContainerStyle(
         layout ? layout : 'block',
-        mode ? mode : 'primary'
+        mode ? mode : 'primary',
       )}
     >
       <button

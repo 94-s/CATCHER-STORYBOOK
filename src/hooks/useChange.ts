@@ -1,11 +1,12 @@
-import React, { useCallback, useState, ChangeEvent } from "react";
+import * as React from 'react';
+import { useCallback, useState, ChangeEvent } from 'react';
 
 const useChange = (
-  initialState: string
+  initialState: string,
 ): [
   string,
   React.Dispatch<React.SetStateAction<string>>,
-  (e: React.ChangeEvent<HTMLInputElement>) => void
+  (e: React.ChangeEvent<HTMLInputElement>) => void,
 ] => {
   const [value, setValue] = useState(initialState);
 

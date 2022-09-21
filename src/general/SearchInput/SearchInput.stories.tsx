@@ -1,19 +1,20 @@
 /**@jsxImportSource @emotion/react */
-import { Meta } from "@storybook/react";
-import { SearchInput, SearchInputProps } from "./SearchInput";
+import * as React from 'react';
+import { Meta } from '@storybook/react';
+import { SearchInput, SearchInputProps } from './SearchInput';
 
 export default {
-  title: "components/SearchInput",
+  title: 'components/SearchInput',
   component: SearchInput,
   arg: {},
 } as Meta<SearchInputProps>;
 
 export const ProductSearch = (args: SearchInputProps) => {
   const search = (keyword: string) => {
-    console.log("search: ", keyword);
+    console.log('search: ', keyword);
   };
   const autoComplete = (keyword: string) => {
-    console.log("autoComplete: ", keyword);
+    console.log('autoComplete: ', keyword);
   };
 
   return (
@@ -27,10 +28,10 @@ export const ProductSearch = (args: SearchInputProps) => {
 
 export const BrandSearch = (args: SearchInputProps) => {
   const search = (keyword: string) => {
-    console.log("search: ", keyword);
+    console.log('search: ', keyword);
   };
   const autoComplete = (keyword: string) => {
-    console.log("autoComplete: ", keyword);
+    console.log('autoComplete: ', keyword);
   };
 
   return (

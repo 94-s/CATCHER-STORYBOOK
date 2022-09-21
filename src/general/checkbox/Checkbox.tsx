@@ -29,7 +29,7 @@ const Checkbox = ({
   return (
     <label css={styles.StyledLabel(size, disabled)} htmlFor={label}>
       <input
-        type='checkbox'
+        type="checkbox"
         css={styles.StyledInput(disabled)}
         id={label}
         name={label}

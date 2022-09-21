@@ -1,7 +1,6 @@
 /**@jsxImportSource @emotion/react */
 import React, { useRef, useState } from 'react';
 import * as styles from './Input.style';
-import { Icon } from '../Icon';
 
 export interface InputProps {
   label?: string;
