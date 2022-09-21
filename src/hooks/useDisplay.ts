@@ -11,7 +11,7 @@ const useDisplay = (
   () => void,
   () => void,
 ] => {
-  const [display, setDisplay] = useState(initialState);
+  const [display, setDisplay] = useState<boolean>(initialState);
 
   const openDisplay = useCallback(() => {
     setDisplay(true);

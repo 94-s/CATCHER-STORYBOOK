@@ -9,7 +9,7 @@ const useChange = (
   React.Dispatch<React.SetStateAction<string>>,
   (e: React.ChangeEvent<HTMLInputElement>) => void,
 ] => {
-  const [value, setValue] = useState(initialState);
+  const [value, setValue] = useState<string>(initialState);
 
   const onChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
