@@ -1,7 +1,7 @@
 /**@jsxImportSource @emotion/react */
-import React from 'react';
-import * as icons from './svg';
-import { css } from '@emotion/react';
+import React from "react";
+import * as icons from "./svg";
+import { css } from "@emotion/react";
 
 export type IconType = keyof typeof icons;
 
@@ -57,7 +57,7 @@ export const Icon = ({
   rotate = 0,
   width,
   height,
-  color = 'black',
+  color = "black",
   className,
 }: IconBoxProps) => {
   return (
