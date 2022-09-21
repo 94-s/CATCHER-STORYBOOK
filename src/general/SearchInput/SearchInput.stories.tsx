@@ -39,6 +39,8 @@ export const BrandSearch = (args: SearchInputProps) => {
       placeholder="찾는 브랜드가 있으신가요?"
       search={search}
       autoComplete={autoComplete}
-    />
+    >
+      <div>검색</div>
+    </SearchInput>
   );
 };
