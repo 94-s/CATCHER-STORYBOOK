@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useCallback, useState, ChangeEvent } from 'react';
 
+// input change에서 반복적으로 사용되는 hook 분리
 const useChange = (
   initialState: string,
 ): [

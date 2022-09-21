@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useCallback, useState } from 'react';
 
+// display show, hidden 반복적으로 사용되는 hook 분리
 const useDisplay = (
   initialState: boolean,
 ): [
@@ -13,7 +14,6 @@ const useDisplay = (
   const [display, setDisplay] = useState(initialState);
 
   const openDisplay = useCallback(() => {
-    console.log('open');
     setDisplay(true);
   }, []);
 
