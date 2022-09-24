@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState } from 'react';
 
 const useDisplay = (
   initialState: boolean
@@ -12,7 +12,7 @@ const useDisplay = (
   const [display, setDisplay] = useState(initialState);
 
   const openDisplay = useCallback(() => {
-    console.log("open");
+    console.log('open');
     setDisplay(true);
   }, []);
 
