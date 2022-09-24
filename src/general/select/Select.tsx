@@ -5,9 +5,13 @@ import * as Styles from './select.style';
 
 export interface SelectProps
   extends Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'size'> {
+  /** value */
   value: string;
+  /** setValue */
   setValue: Dispatch<SetStateAction<string>>;
+  /** options list 입니다. */
   options: { label?: string }[];
+  /** default vaule 가 없다면 보여줄  placeholder 입니다. */
   placeholder?: string;
 }
 
