@@ -1,12 +1,13 @@
 /**@jsxImportSource @emotion/react */
 import React from 'react';
-import { containerStyle, tooltipStyle } from './Tooltip.style';
+import { containerStyle } from './Tooltip.style';
+import { Directions } from './types';
 
 export interface TooltipProps {
   className?: string;
   children: React.ReactNode;
   message: string;
-  direction?: string;
+  direction?: Directions;
 }
 
 export const Tooltip = ({
@@ -16,11 +17,12 @@ export const Tooltip = ({
   direction = 'bottom',
 }: TooltipProps) => {
   return (
-    <div css={containerStyle()} className={className}>
+    <div
+      css={containerStyle()}
+      className={`${className} ${direction}`}
+      data-tooltip={message}
+    >
       {children}
-      <div css={tooltipStyle(direction)} className="tooltip">
-        {message}
-      </div>
     </div>
   );
 };
