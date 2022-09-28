@@ -14,7 +14,8 @@ export interface SearchInputProps {
   placeholder?: string;
   search: (keyword: string) => void;
   autoComplete: (keyword: string) => void;
-  children?: React.ReactNode;
+  recommend?: React.ReactNode;
+  history?: React.ReactNode;
 }
 
 export const SearchInput = ({
@@ -22,7 +23,8 @@ export const SearchInput = ({
   placeholder,
   search,
   autoComplete,
-  children = <></>,
+  recommend = <></>,
+  history = <></>,
 }: SearchInputProps) => {
   const [value, , onChange] = useChange('');
   const [display, , openDisplay, closeDisplay] = useDisplay(false);
@@ -70,7 +72,7 @@ export const SearchInput = ({
           />
         </button>
       </form>
-      {display && children}
+      {display && (value.length > 0 ? recommend : history)}
     </div>
   );
 };
