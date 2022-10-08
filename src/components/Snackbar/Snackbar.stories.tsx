@@ -9,5 +9,5 @@ export default {
 } as Meta<SnackbarProps>;
 
 export const Base = (args: SnackbarProps) => {
-  return <Snackbar />;
+  return <Snackbar {...args} />;
 };

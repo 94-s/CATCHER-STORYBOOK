@@ -1,10 +1,20 @@
 import React from 'react';
-import { snackbarContainerStyle } from './Snackbar.style';
+import { Portal } from '@general/Portal';
+import { snackbarContainerStyle, snackbarStateChanger } from './Snackbar.style';
 
-export interface SnackbarProps {}
+export interface SnackbarStateType {
+  stateType: 'success' | 'danger' | 'error';
+}
+export interface SnackbarProps extends SnackbarStateType {
+  message: string;
+}
 
-const Snackbar = () => {
-  return <></>;
+const Snackbar = ({ stateType, message }: SnackbarProps) => {
+  return (
+    <Portal>
+      <div id='catcher-snackbar-container' css={[snackbarContainerStyle]}></div>
+    </Portal>
+  );
 };
 
 export default Snackbar;
