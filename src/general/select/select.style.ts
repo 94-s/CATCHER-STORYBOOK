@@ -27,13 +27,7 @@ export const DropdownMenu = (isActive: boolean) => css`
   background-color: white;
   position: relative;
   border: 2px solid ${Colors.element.grayScale300};
-  ${isActive
-    ? css`
-        display: block;
-      `
-    : css`
-        display: none;
-      `}
+  display: ${isActive ? 'block' : 'none'};
 `;
 
 export const DropdownItemContainer = css`

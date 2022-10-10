@@ -32,22 +32,39 @@ const Select = ({ value, placeholder, options, setValue }: SelectProps) => {
     }
 
     setIsActive((prev) => !prev);
-  }, []);
+  }, [setValue]);
+
+  const RenderValues = {
+    true: {
+      style: Styles.ItemName,
+      children: value
+    },
+    false: {
+      style: Styles.DropdownSelect,
+      children: placeholder
+    }
+  };
+
+  const onChangeRender = useCallback((isValue: boolean) => {
+    if(isValue){
+      return RenderValues.true.children
+    } else {
+      return RenderValues.false.children
+    }
+  }, [RenderValues.false.children, RenderValues.true.children])
+
+  const isEmpty = (value: string) => {
+    if(value) {
+      return false
+    } else {
+      return true
+    }
+  }
 
   return (
     <div css={Styles.DropdownContainer}>
       <div css={Styles.DropdownBody} onClick={() => onActiveToggle()}>
-        {value ? (
-          <>
-            <p css={Styles.ItemName}>{value}</p>
-            <Icon icon='icArrowBottom' width='16px' height='16px' />
-          </>
-        ) : (
-          <>
-            <p css={Styles.DropdownSelect}>{placeholder}</p>
-            <Icon icon='icArrowBottom' width='16px' height='16px' />
-          </>
-        )}
+      <> {onChangeRender(!isEmpty(value))} <Icon icon='icArrowBottom' width='16px' height='16px' /> </>
       </div>
       <ul css={Styles.DropdownMenu(isActive)}>
         {options.map((item, index: number) => (
