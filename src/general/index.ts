@@ -4,3 +4,4 @@ export * from './Button';
 export * from './checkbox';
 export * from './SearchInput';
 export * from './Tooltip';
+export * from './Portal';
