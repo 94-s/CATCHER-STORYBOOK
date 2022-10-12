@@ -1,8 +1,13 @@
 /**@jsxImportSource @emotion/react */
 import React from 'react';
-import { containerStyle } from './Tooltip.style';
+import * as styles from './Tooltip.style';
 import { Directions } from './types';
 
+/**
+ * children: mouse hover 시 Tooltip이 표시될 Component
+ * message: Tooltip 내용
+ * direction: Tooltip 방향
+ */
 export interface TooltipProps {
   className?: string;
   children: React.ReactNode;
@@ -18,7 +23,7 @@ export const Tooltip = ({
 }: TooltipProps) => {
   return (
     <div
-      css={containerStyle()}
+      css={styles.containerStyle()}
       className={`${className} ${direction}`}
       data-tooltip={message}
     >
