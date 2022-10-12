@@ -31,6 +31,7 @@ export const Base = (args: IconProps) => {
       <Icon icon="icInputDelete" />
       <Icon icon="icInputModify" />
       <Icon icon="icNotionLogo" />
+      <Icon icon="icRecentSearch" />
     </div>
   );
 };
