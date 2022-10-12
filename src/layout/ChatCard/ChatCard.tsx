@@ -1,6 +1,6 @@
 /**@jsxImportSource @emotion/react */
-import React from 'react';
-import { containerStyle, chatCardStyle } from './ChatCard.style';
+import React from "react";
+import { containerStyle, chatCardStyle } from "./ChatCard.style";
 
 /**
  * message: 채팅 메시지
@@ -12,17 +12,10 @@ export interface ChatCardProps {
   me: boolean;
 }
 
-export const ChatCard = ({
-  className,
-  message,
-  me
-}: ChatCardProps) => {
+export const ChatCard = ({ className, message, me }: ChatCardProps) => {
   return (
     <div css={containerStyle()}>
-      <div  
-        css={chatCardStyle(me)}>
-          {message}
-      </div>
+      <div css={chatCardStyle(me)}>{message}</div>
     </div>
   );
 };

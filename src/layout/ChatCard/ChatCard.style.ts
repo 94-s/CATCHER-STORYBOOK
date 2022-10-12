@@ -3,12 +3,15 @@ import { Colors } from "@styles/themes";
 
 const containerStyle = () => css`
   display: flex;
-  width: 100%;
+  flex-direction: column;
+  margin: 1rem;
 `;
 
 const chatCardMode = (me: boolean) =>
   me
     ? `
+      margin-left: auto;
+      
       &,
       &::before {
         background-color: ${Colors.element.primary500};
@@ -17,7 +20,7 @@ const chatCardMode = (me: boolean) =>
 
       &::before {
         top: 50%;
-        left: -0.25rem;
+        right: -0.25rem;
         transform: translate(0, -50%) rotate(45deg);
       }
     `
@@ -30,7 +33,7 @@ const chatCardMode = (me: boolean) =>
 
     &::before {
       top: 50%;
-      right: -0.25rem;
+      left: -0.25rem;
       transform: translate(0, -50%) rotate(45deg);
     }
     `;
@@ -43,7 +46,8 @@ const chatCardStyle = (me: boolean) => css`
   max-width: 10rem;
   padding: 0.5rem 0.7rem;
   border-radius: 0.3rem;
-  white-space: pre;
+  white-space: normal;
+  word-wrap: break-word;
 
   &::before {
     position: absolute;
