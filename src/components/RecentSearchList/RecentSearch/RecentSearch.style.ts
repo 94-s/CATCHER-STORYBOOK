@@ -7,6 +7,7 @@ const containerStyle = () => css`
   align-items: center;
   padding: 0.7rem 1rem;
   gap: 0.5rem;
+  cursor: pointer;
 `;
 
 const contentStyle = () => css`
