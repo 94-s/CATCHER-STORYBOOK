@@ -14,9 +14,15 @@ module.exports = {
     ...config,
     resolve: {
       ...config.resolve,
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
       alias: {
         ...config.resolve.alias,
         '@emotion/core': toPath('node_modules/@emotion/react'),
+        '@src': path.resolve(__dirname, '../src'),
+        '@components': path.resolve(__dirname, '../src/components'),
+        '@general': path.resolve(__dirname, '../src/general'),
+        '@hooks': path.resolve(__dirname, '../src/hooks'),
+        '@styles': path.resolve(__dirname, '../src/general/styles'),
       },
     },
   }),
