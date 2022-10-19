@@ -1,5 +1,5 @@
-import { css } from "@emotion/react";
-import { Colors } from "../styles/themes";
+import { css } from '@emotion/react';
+import { Colors } from '@src/general/styles/themes';
 
 export const GridContainer = (span: number, gap: string) => {
   return css`
