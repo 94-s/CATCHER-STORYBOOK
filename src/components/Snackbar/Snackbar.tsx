@@ -1,6 +1,11 @@
-import React from 'react';
+/**@jsxImportSource @emotion/react */
 import { Portal } from '@general/Portal';
-import { snackbarContainerStyle, snackbarStateChanger } from './Snackbar.style';
+import {
+  snackbarContainerStyle,
+  snackbarStateConfig,
+  snackbarTextStyle,
+  snackbarLayoutStyle,
+} from './Snackbar.style';
 
 export interface SnackbarStateType {
   stateType: 'success' | 'danger' | 'error';
@@ -12,7 +17,14 @@ export interface SnackbarProps extends SnackbarStateType {
 const Snackbar = ({ stateType, message }: SnackbarProps) => {
   return (
     <Portal>
-      <div id='catcher-snackbar-container' css={[snackbarContainerStyle]}></div>
+      <div css={snackbarLayoutStyle}>
+        <div
+          id='catcher-snackbar-container'
+          css={[snackbarContainerStyle, snackbarStateConfig[stateType]]}
+        >
+          <span css={snackbarTextStyle}>{message}</span>
+        </div>
+      </div>
     </Portal>
   );
 };

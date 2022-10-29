@@ -14,15 +14,32 @@ const snackbarStateConfig = {
   `,
 };
 
-const snackbarStateChanger = () => {
-  return;
-};
-
 const snackbarContainerStyle = css`
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 400px;
-  height: 300px;
+  height: 50px;
+  border-radius: 10px;
   ${Fonts.style.body4}
 `;
 
-export { snackbarContainerStyle, snackbarStateChanger };
+const snackbarTextStyle = css`
+  color: ${Colors.palette.gray90};
+  letter-spacing: 1.8px;
+`;
+
+const snackbarLayoutStyle = css`
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+`;
+
+export {
+  snackbarContainerStyle,
+  snackbarStateConfig,
+  snackbarTextStyle,
+  snackbarLayoutStyle,
+};
