@@ -6,6 +6,12 @@ import Button, { ButtonProps } from './Button';
 export default {
   title: 'components/Button',
   component: Button,
+  argTypes: {
+    text: {
+      description: '버튼안의 내용을 정의',
+      defaultValue: '버튼 내용을 입력하세요.',
+    },
+  },
 } as Meta<ButtonProps>;
 
 const storiesLayoutStyle = css`
