@@ -1,6 +1,5 @@
 import { css } from '@emotion/react';
 import { Colors, Fonts } from '../../general/styles/themes';
-import { SnackbarStateType } from './Snackbar';
 
 const snackbarStateConfig = {
   success: css`
