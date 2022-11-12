@@ -6,7 +6,7 @@ import Input, { InputProps } from './Input';
 import { Icon } from '@components/Icon';
 
 export default {
-  title: 'components/Input',
+  title: "components/Input",
   component: Input,
 } as Meta<InputProps>;
 

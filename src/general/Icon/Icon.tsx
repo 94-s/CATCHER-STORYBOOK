@@ -1,7 +1,7 @@
 /**@jsxImportSource @emotion/react */
-import React from 'react';
-import * as icons from './svg';
-import { css } from '@emotion/react';
+import React from "react";
+import * as icons from "./svg";
+import { css } from "@emotion/react";
 
 export type IconType = keyof typeof icons;
 

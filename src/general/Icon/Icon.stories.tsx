@@ -11,7 +11,7 @@ const layout = css`
 `;
 
 export default {
-  title: 'components/Icon',
+  title: "components/Icon",
   component: Icon,
   arg: {},
 } as Meta<IconProps>;
