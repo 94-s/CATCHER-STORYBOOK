@@ -15,6 +15,7 @@ export interface IconBoxProps {
   width?: string;
   height?: string;
   color?: string;
+  stroke?: string;
   className?: string;
 }
 
@@ -25,7 +26,9 @@ const iconBoxStyle = (
 
   height?: string,
 
-  color?: string
+  color?: string,
+
+  stroke?: string,
 ) => css`
   display: flex;
   justify-content: center;
@@ -46,6 +49,7 @@ const iconBoxStyle = (
     path,
     circle {
       fill: ${color};
+      ${stroke ? `stroke: ${stroke};` : ''}
     }
   }
 `;
@@ -57,11 +61,15 @@ export const Icon = ({
   rotate = 0,
   width,
   height,
-  color = "black",
+  color = 'black',
+  stroke,
   className,
 }: IconBoxProps) => {
   return (
-    <div css={iconBoxStyle(rotate, width, height, color)} className={className}>
+    <div
+      css={iconBoxStyle(rotate, width, height, color, stroke)}
+      className={className}
+    >
       <SVGIcon icon={icon} />
     </div>
   );

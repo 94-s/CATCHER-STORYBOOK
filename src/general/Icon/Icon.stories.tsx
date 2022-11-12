@@ -1,8 +1,9 @@
 /**@jsxImportSource @emotion/react */
-import { Meta } from "@storybook/react";
-import { css } from "@emotion/react";
-import { Icon, IconProps } from "./Icon";
-import { Colors } from "../styles/themes";
+import * as React from 'react';
+import { Meta } from '@storybook/react';
+import { css } from '@emotion/react';
+import { Icon, IconProps } from './Icon';
+import { Colors } from '@styles/themes';
 
 const layout = css`
   display: flex;
@@ -30,6 +31,8 @@ export const Base = (args: IconProps) => {
       <Icon icon="icInputDelete" />
       <Icon icon="icInputModify" />
       <Icon icon="icNotionLogo" />
+      <Icon icon="icRecentSearch" />
+      <Icon icon="icEmpty" />
     </div>
   );
 };

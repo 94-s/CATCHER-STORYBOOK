@@ -21,3 +21,5 @@ export { ReactComponent as icSend } from './icSend.svg';
 export { ReactComponent as icStackalt } from './icStackalt.svg';
 export { ReactComponent as icVisible } from './icVisible.svg';
 export { ReactComponent as icArrowBottom } from './icArrowBottom.svg';
+export { ReactComponent as icRecentSearch } from './icRecentSearch.svg';
+export { ReactComponent as icEmpty } from './icEmpty.svg';
