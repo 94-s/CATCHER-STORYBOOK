@@ -1,9 +1,8 @@
 /**@jsxImportSource @emotion/react */
-import * as React from 'react';
-import { Meta } from '@storybook/react';
-import { css } from '@emotion/react';
-import { Icon, IconProps } from './Icon';
-import { Colors } from '@styles/themes';
+import { Meta } from "@storybook/react";
+import { css } from "@emotion/react";
+import { Icon, IconProps } from "./Icon";
+import { Colors } from "../styles/themes";
 
 const layout = css`
   display: flex;
@@ -11,7 +10,7 @@ const layout = css`
 `;
 
 export default {
-  title: 'components/Icon',
+  title: "components/Icon",
   component: Icon,
   arg: {},
 } as Meta<IconProps>;

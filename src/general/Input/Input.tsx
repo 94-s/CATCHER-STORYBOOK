@@ -4,7 +4,7 @@ import * as styles from './Input.style';
 
 export interface InputProps {
   label?: string;
-  type: 'text' | 'email' | 'password';
+  type?: "text" | "email" | "password";
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   disabled?: boolean;
@@ -40,7 +40,7 @@ const Input = ({
             ref={InputRef}
             css={styles.InputStyle}
             id={id}
-            type={type ?? 'text'}
+            type={type ?? "text"}
             value={value}
             placeholder={placeholder}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange(e)}
