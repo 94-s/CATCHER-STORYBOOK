@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { Colors, Fonts } from '../styles/themes';
+import { Colors, Fonts } from '@styles/themes';
 
 //Input Container
 export const InputContainerStyle = () => {

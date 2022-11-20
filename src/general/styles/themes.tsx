@@ -110,43 +110,43 @@ interface ColorsProps {
 // Typography
 interface FontsProps {
   size: {
-    size40:string
-    size35:string
-    size26:string
-    size18:string
-    size16:string
-    size14:string
-    size12:string
+    size40: string;
+    size35: string;
+    size26: string;
+    size18: string;
+    size16: string;
+    size14: string;
+    size12: string;
   };
   weight: {
-    weight100: string
-    weight200: string
-    weight300: string
-    weight400: string
-    weight500: string
-    weight600: string
-    weight700: string
-    weight800: string
-    weight900: string
+    weight100: string;
+    weight200: string;
+    weight300: string;
+    weight400: string;
+    weight500: string;
+    weight600: string;
+    weight700: string;
+    weight800: string;
+    weight900: string;
   };
   style: {
-    heading1: string
-    heading2: string
-    title1: string
-    title2: string
-    title3: string
-    subtitle1: string
-    subtitle2: string
-    subtitle3: string
-    body1: string
-    body2: string
-    body3: string
-    body4: string
-    body5: string
-    body6: string
-    detail1: string
-    detail2: string
-  }
+    heading1: string;
+    heading2: string;
+    title1: string;
+    title2: string;
+    title3: string;
+    subtitle1: string;
+    subtitle2: string;
+    subtitle3: string;
+    body1: string;
+    body2: string;
+    body3: string;
+    body4: string;
+    body5: string;
+    body6: string;
+    detail1: string;
+    detail2: string;
+  };
 }
 
 const Colors: ColorsProps = {
@@ -261,13 +261,13 @@ const Fonts: FontsProps = {
   // font-size
   // [size숫자] 보다 small, medium, large, 이런식으로 구분하는게 나을거 같기도 함
   size: {
-    size40:'font-size: 40px;',
-    size35:'font-size: 52px;',
-    size26:'font-size: 26px;',
-    size18:'font-size: 18px;',
-    size16:'font-size: 16px;',
-    size14:'font-size: 14px;',
-    size12:'font-size: 12px;',
+    size40: 'font-size: 40px;',
+    size35: 'font-size: 52px;',
+    size26: 'font-size: 26px;',
+    size18: 'font-size: 18px;',
+    size16: 'font-size: 16px;',
+    size14: 'font-size: 14px;',
+    size12: 'font-size: 12px;',
   },
   //font-weight
   weight: {
@@ -299,8 +299,28 @@ const Fonts: FontsProps = {
     body6: 'font-size:14px; font-weight:400; line-height:22px;',
     detail1: 'font-size:12px; font-weight:500; line-height:18px;',
     detail2: 'font-size:12px; font-weight:400; line-height:18px;',
-  }
-}
+  },
+};
+
+/**
+ * [ MediaQuery : BreakPoint ]
+ * PC : 1279 초과
+ * TABLET: 768 부터
+ * MOBILE: 480 부터
+ */
+
+const BreakPoint = [1279, 768, 480];
+const MediaQuery = BreakPoint.map(
+  (breakpoint) => `@media (max-width: ${breakpoint}px)`
+  /** [사용법]
+   * 
+   * 1279px이하
+   *  ${MediaQuery[0]} {
+      background-color: red;
+    }
+   * 
+   */
+);
 
 // TODO: export에 Fonts 추가
-export { Colors,Fonts };
+export { Colors, Fonts, MediaQuery };

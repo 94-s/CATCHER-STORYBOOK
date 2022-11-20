@@ -1,12 +1,31 @@
 /**@jsxImportSource @emotion/react */
+import React from 'react';
 import { Global, css } from '@emotion/react';
-import { Colors } from './themes';
 
 export default function GlobalStyle() {
+  /** 모바일에서 chrome, safari 100vh 이슈로 script로 100vh를 계산하는 함수
+   * [사용법]
+   *
+   * div{
+   *  height: 100vh;
+   *  height: calc(var(--vh, 1vh) * 100)
+   * }
+   *
+   */
+  function setScreenSize() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+  React.useEffect(() => {
+    setScreenSize();
+  });
   return <Global styles={style} />;
 }
 const style = css`
   // Reset CSS
+  :root {
+    --vh: 100%;
+  }
   html {
     font-size: 62.5%;
   }
