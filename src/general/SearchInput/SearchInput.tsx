@@ -1,7 +1,6 @@
 /**@jsxImportSource @emotion/react */
 import * as React from 'react';
 import * as styles from './SeachInput.style';
-import React from 'react';
 import {
   containerStyle,
   searchInputStyle,
