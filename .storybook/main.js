@@ -23,7 +23,6 @@ module.exports = {
         '@general': path.resolve(__dirname, '../src/general'),
         '@styles': path.resolve(__dirname, '../src/general/styles'),
         '@hooks': path.resolve(__dirname, '../src/hooks'),
-        '@styles': path.resolve(__dirname, '../src/general/styles'),
       },
     },
   }),
