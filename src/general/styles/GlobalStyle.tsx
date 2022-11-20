@@ -26,7 +26,6 @@ const style = css`
   :root {
     --vh: 100%;
   }
-
   html {
     font-size: 62.5%;
   }
