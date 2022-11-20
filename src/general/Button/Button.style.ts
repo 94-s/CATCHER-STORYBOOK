@@ -1,9 +1,9 @@
 import { css } from '@emotion/react';
 import { Colors } from '@styles/themes';
-
 export const buttonContainerStyle = (
   layout: 'block' | 'inline-block',
   mode: 'cta' | 'primary' | 'line' | 'gray',
+
 ) => {
   return css`
     display: ${layout};
