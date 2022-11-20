@@ -29,12 +29,12 @@ const rollupConfig = [
     plugins: [
       alias({
         entries: [
-          { find: '@src', replacement: './src/' },
-          { find: '@components', replacement: './src/components/' },
-          { find: '@general', replacement: './src/general/' },
+          { find: '@src', replacement: './src' },
+          { find: '@components', replacement: './src/components' },
+          { find: '@general', replacement: './src/general' },
           { find: '@styles', replacement: './src/general/styles' },
-          { find: '@hooks', replacement: './src/hooks/' },
-          { find: '@general', replacement: './src/general/' },
+          { find: '@hooks', replacement: './src/hooks' },
+          { find: '@general', replacement: './src/general' },
         ],
       }),
       peerDepsExternal(),
