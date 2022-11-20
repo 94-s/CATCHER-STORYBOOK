@@ -1,4 +1,5 @@
 /**@jsxImportSource @emotion/react */
+import React from 'react';
 import { Portal } from '@general/Portal';
 import {
   snackbarContainerStyle,
@@ -19,7 +20,7 @@ const Snackbar = ({ stateType, message }: SnackbarProps) => {
     <Portal>
       <div css={snackbarLayoutStyle}>
         <div
-          id='catcher-snackbar-container'
+          id="catcher-snackbar-container"
           css={[snackbarContainerStyle, snackbarStateConfig[stateType]]}
         >
           <span css={snackbarTextStyle}>{message}</span>
