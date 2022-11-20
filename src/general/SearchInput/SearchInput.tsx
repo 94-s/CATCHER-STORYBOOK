@@ -2,11 +2,7 @@
 import * as React from 'react';
 import * as styles from './SeachInput.style';
 import React from 'react';
-import {
-  containerStyle,
-  searchInputStyle,
-  buttonStyle,
-} from './SeachInput.style';
+import * as styles from './SeachInput.style';
 import { Icon } from '@src/general/Icon';
 import useChange from '@hooks/useChange';
 import useDisplay from '@hooks/useDisplay';
