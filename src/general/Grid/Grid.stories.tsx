@@ -1,10 +1,11 @@
 /**@jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
-import { Meta } from "@storybook/react";
-import Grid, { GridProps } from "./Grid";
+import React from 'react';
+import { css } from '@emotion/react';
+import { Meta } from '@storybook/react';
+import Grid, { GridProps } from './Grid';
 
 export default {
-  title: "components/Grid",
+  title: 'components/Grid',
   component: Grid,
 } as Meta<GridProps>;
 
