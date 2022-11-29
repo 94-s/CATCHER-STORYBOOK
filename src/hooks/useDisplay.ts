@@ -1,15 +1,16 @@
 import React, { useCallback, useState } from 'react';
 
+// display show, hidden 반복적으로 사용되는 hook 분리
 const useDisplay = (
-  initialState: boolean
+  initialState: boolean,
 ): [
   boolean,
   React.Dispatch<React.SetStateAction<boolean>>,
   () => void,
   () => void,
-  () => void
+  () => void,
 ] => {
-  const [display, setDisplay] = useState(initialState);
+  const [display, setDisplay] = useState<boolean>(initialState);
 
   const openDisplay = useCallback(() => {
     console.log('open');

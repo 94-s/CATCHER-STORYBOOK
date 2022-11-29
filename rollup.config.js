@@ -1,6 +1,7 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
+import alias from '@rollup/plugin-alias';
 import { terser } from 'rollup-plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import scss from 'rollup-plugin-scss';
@@ -26,6 +27,16 @@ const rollupConfig = [
       },
     ],
     plugins: [
+      alias({
+        entries: [
+          { find: '@src', replacement: './src' },
+          { find: '@components', replacement: './src/components' },
+          { find: '@general', replacement: './src/general' },
+          { find: '@styles', replacement: './src/general/styles' },
+          { find: '@hooks', replacement: './src/hooks' },
+          { find: '@general', replacement: './src/general' },
+        ],
+      }),
       peerDepsExternal(),
       resolve(),
       commonjs(),

@@ -1,11 +1,10 @@
 /**@jsxImportSource @emotion/react */
 import React, { useRef, useState } from 'react';
 import * as styles from './Input.style';
-import { Icon } from '../Icon';
 
 export interface InputProps {
   label?: string;
-  type: 'text' | 'email' | 'password';
+  type?: "text" | "email" | "password";
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   disabled?: boolean;
@@ -41,7 +40,7 @@ const Input = ({
             ref={InputRef}
             css={styles.InputStyle}
             id={id}
-            type={type ?? 'text'}
+            type={type ?? "text"}
             value={value}
             placeholder={placeholder}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange(e)}
