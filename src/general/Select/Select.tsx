@@ -22,7 +22,6 @@ const Select = ({ value, placeholder, options, setValue }: SelectProps) => {
     setIsActive((prev) => !prev);
   }, []);
 
-
   const onSelectItem = useCallback(
     (e: React.MouseEvent<HTMLLIElement>) => {
       const targetId = e.currentTarget.id;
@@ -38,11 +37,9 @@ const Select = ({ value, placeholder, options, setValue }: SelectProps) => {
     [setValue]
   );
 
-
   const RenderValues = {
     true: {
       style: Styles.ItemName,
-
       children: value,
     },
     false: {
@@ -70,14 +67,13 @@ const Select = ({ value, placeholder, options, setValue }: SelectProps) => {
     }
   };
 
-
-
   return (
     <div css={Styles.DropdownContainer}>
       <div css={Styles.DropdownBody} onClick={() => onActiveToggle()}>
         <>
-          {onChangeRender(!isEmpty(value))}
-          <Icon icon='icArrowBottom' width='16px' height='16px' />
+          {' '}
+          {onChangeRender(!isEmpty(value))}{' '}
+          <Icon icon='icArrowBottom' width='16px' height='16px' />{' '}
         </>
       </div>
       <ul css={Styles.DropdownMenu(isActive)}>

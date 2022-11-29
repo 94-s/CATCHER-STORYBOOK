@@ -13,6 +13,7 @@ const useDisplay = (
   const [display, setDisplay] = useState<boolean>(initialState);
 
   const openDisplay = useCallback(() => {
+    console.log('open');
     setDisplay(true);
   }, []);
 
